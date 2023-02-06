@@ -14,6 +14,7 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 
 3. Si vous possédez une carte graphique NVIDIA, installer le logiciel Cuda depuis le site de NVIDIA :
     https://developer.nvidia.com/cuda-downloads
+    
     ![image](https://user-images.githubusercontent.com/89463240/217079597-6bcd7655-b31d-4ead-a6c1-4c4a29a4c6a1.png)
 
 4. Aller sur le site de PyTorch à l'adresse https://pytorch.org/get-started/locally/
@@ -47,11 +48,13 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
       là l'utilité d'un logiciel comme LabelImg qui permet de rapidement tracer des rectangles sur des images et qui fournit
       un format de sortie compatible avec YOLOv5.)
 2. Créer un dossier pour le dataset. Dans ce dossier, créer un dossier pour les images et un autre pour les étiquettes.
+
 ![image](https://user-images.githubusercontent.com/89463240/217083315-a7eb631a-94e3-46ff-b341-b584e103f759.png)
 3. Ouvrir LabelImg depuis un terminal avec la commande labelimg
 4. Dans la barre latérale à gauche, sélectionner le format Yolo. Vous pouvez ouvrir votre dossier d'images avec Open Dir
    et changer le dossier d'enregistrement des étiquettes avec Change Save Dir. (Il est recommandé d'avoir un dossier pour le dataset 
    qui contient des dossiers séparés pour les images et les étiquettes.)
+
 ![image](https://user-images.githubusercontent.com/89463240/217080357-236bfc18-899d-40ae-920c-2924421705e5.png)
 5. Vous pouvez tracer des rectangles autour des objets dans l'image et assigner une étiquette à chaque rectangle.
 ![image](https://user-images.githubusercontent.com/89463240/217081390-8417ba8f-8f6f-4fc5-9623-ec851b5d6666.png)
