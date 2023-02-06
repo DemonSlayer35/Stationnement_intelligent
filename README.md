@@ -62,6 +62,7 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 ![image](https://user-images.githubusercontent.com/89463240/217080357-236bfc18-899d-40ae-920c-2924421705e5.png)
 
 5. Vous pouvez tracer des rectangles autour des objets dans l'image et assigner une étiquette à chaque rectangle.
+
 ![image](https://user-images.githubusercontent.com/89463240/217081390-8417ba8f-8f6f-4fc5-9623-ec851b5d6666.png)
 
 6. Enregistrer vos changements avec le bouton Save.
