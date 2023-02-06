@@ -56,10 +56,8 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 
 3. Ouvrir LabelImg depuis un terminal avec la commande labelimg
 
-
 4. Dans la barre latérale à gauche, sélectionner le format Yolo. Vous pouvez ouvrir votre dossier d'images avec Open Dir
-   et changer le dossier d'enregistrement des étiquettes avec Change Save Dir. (Il est recommandé d'avoir un dossier pour le dataset 
-   qui contient des dossiers séparés pour les images et les étiquettes.)
+   et changer le dossier d'enregistrement des étiquettes avec Change Save Dir.
 
 ![image](https://user-images.githubusercontent.com/89463240/217080357-236bfc18-899d-40ae-920c-2924421705e5.png)
 
