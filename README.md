@@ -5,7 +5,7 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 
 1. Télécharger le fichier zip du répertoire de YOLOv5 à l'adresse https://github.com/ultralytics/yolov5
                           ou
-   Cloner le répertoire GitHub de YOLOv5 depuis une invite de commandes avec la commande :
+   cloner le répertoire GitHub de YOLOv5 depuis une invite de commandes avec la commande :
     git clone https://github.com/ultralytics/yolov5
 
 2. Installer une version de Python entre 3.7 et 4.0, comme Python 3.9.7 depuis le site de Python :
