@@ -75,7 +75,24 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 ![image](https://user-images.githubusercontent.com/89463240/217090070-ecd2543e-f5da-4cbd-bb6c-4416c26e8cac.png)
 
 (Dans cette image, le dossier du dataset est nommé data_vache et il est situé dans le répertoire yolov5 sur le PC.)
-4. Ouvrir cmd à partir du dossier yolov5 et entraîner l'intelligence en tapant la commande :
+4. Vous pouvez modifier les hyperparamètres à partir du fichier hyp.scatch.yaml (Ce sont des paramètres qui permettent
+   d'améliorer l'entraînement comme la rotation ou la translation des images.)
+5. Ouvrir cmd à partir du dossier yolov5 et entraîner l'intelligence en tapant la commande :
 python train.py --img 320 --batch 16 --epochs 50 --data dataset_vache.yml --weights yolov5s.pt  --workers 4 --hyp data_vache\hyps\hyp.scratch.yaml
-5. À la fin de l'entraînement, la console affichera le dossier où les résultats ont été enregistrés. En général, c'est
+(img définit la résolution des images, 
+batch définit le nombre d'images par section d'entraînement,
+epochs définit le nombre de fois que toutes les images passent à travers le réseau de neurones,
+data pointe vers le fichier yml à utiliser,
+weights définit le modèle à utiliser pour l'entraînement,
+workers définit le nombre de coeurs CPU à utiliser,
+hyp pointe vers le fichier des hyperparamètres)
+6. À la fin de l'entraînement, la console affichera le dossier où les résultats ont été enregistrés. En général, c'est
    quelque chose du genre yolov5/runs/train/exp
+   
+# Test de détection (validation) avec un modèle personnalisé
+1. Ouvrir cmd à partir du dossier yolov5 et démarrer la détection en tapant la commande :
+python detect.py --weights runs/train/exp/weights/best.pt --img 320 --conf 0.25 --source data_vache/images/
+(Dans weigths, spécifier le chemin du modèle entraîné.
+Dans conf, spécifier le niveau de confiance entre 0 et 1 de l'intelligence pour la détection)
+2. Dans la console sera affichée le dossier des résultats. En général, c'est quelque chose du genre
+   yolov5/runs/detect/exp
