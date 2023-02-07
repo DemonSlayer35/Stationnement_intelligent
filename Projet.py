@@ -19,6 +19,23 @@ model.conf = confiance # confiance minimale pour utilisation
 
 cap = cv2.VideoCapture(1) # 0 = Webcam integre ; 1 = Camera USB
 
+def parking(coordinate,frame):
+    liste = results.xyxy[0].tolist()
+    print(coordinate)
+    for x in liste:
+        if x[5]==0.0:
+            x1, y1, x2, y2 = x[:4]
+            emplacement = [(x[0]+x[2])/2,(x[1]+x[3])/2]
+            print(emplacement)
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)  # Dessiner le rectangle
+            cv2.imshow("Détection d'objets", frame)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
+    tete = 90
+    #print(coordinate)
+    
+
+
 while cap.isOpened():
     try:
         ret, frame = cap.read()
@@ -27,14 +44,38 @@ while cap.isOpened():
         #    break
         #img = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
         results = model(frame)
+        #liste = results.xyxy[0].tolist()
+        #for x in range(len(liste)):
+        #    value_argon = (liste[x][5])
+        #    value_conf = liste[x][4]
+        #print(results)
+        #frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+        #parking(results,frame)
+
         liste = results.xyxy[0].tolist()
-        for x in range(len(liste)):
-            value_argon = (liste[x][5])
-            value_conf = liste[x][4]
         print(results)
+        for x in liste:
+            if x[5]==0.0:
+                x1, y1, x2, y2 = [int(x) for x in x[:4]]
+                emplacement = [(x1+x2)/2,(y1+y2)/2]
+                print(emplacement)
+                frame = np.array(frame)
+                cv2.rectangle(frame, (x1, y1), (x2,y2), (255, 0, 0), 2)  # Dessiner le rectangle
+            if x[5]==1.0:
+                x1, y1, x2, y2 = [int(x) for x in x[:4]]
+                emplacement = [(x1+x2)/2,(y1+y2)/2]
+                print(emplacement)
+                frame = np.array(frame)
+                cv2.rectangle(frame, (x1, y1), (x2,y2), (0, 255, 0), 2)  # Dessiner le rectangle
+        cv2.imshow("Détection d'objets", frame)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
+
+
         
 
     except:
         print("An exception occurred")
-    time.sleep(5)
-    cv2.destroyAllWindows()
+    #time.sleep(10)
+    #cv2.destroyAllWindows()
