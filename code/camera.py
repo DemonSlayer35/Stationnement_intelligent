@@ -1,6 +1,7 @@
 import cv2 # OpenCV
 import numpy as np
 import torch
+import ecran
 
 model = torch.hub.load('C:/yolov5', 'custom', path='C:/yolov5/bestv5m.pt', source='local')
 model.conf = 0.45  # Confiance minimale pour utilisation
@@ -36,12 +37,14 @@ while cap.isOpened():
     frame = np.array(frame)
     for i in range(len(values_x)):
         moyenne[i] /= 20
+        ecran.liste[i] = moyenne[i]
         color = (255, 0, 0) if moyenne[i] <= 0.5 else (0, 255, 0)
         cv2.rectangle(frame, (values_x[i][0], values_y[i][0]), (values_x[i][1], values_y[i][1]), color, 2)
         if moyenne[i] > 0.5:
             print("La voiture se trouve dans le parking", i+1)
 
     print(moyenne)
+    ecran.affichage()
     cv2.imshow("Détection d'objets", frame)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
