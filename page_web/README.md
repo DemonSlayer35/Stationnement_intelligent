@@ -30,3 +30,8 @@ pour récupérer une liste de disponibilité de ces parkings à partir d'une API
 * Les parkings disponibles sont remplis de vert et les parkings occupés sont remplis de rouge. Les numéros de parking sont également affichés à l'intérieur des rectangles.
 
 * Toutes les 5 secondes, les données affichées sur le canvas HTML sont mises à jour.
+
+## test_web.py
+* Ce fichier est un script Python pour tester la publication de la liste en MQTT au lieu de Flask.
+
+* Dans le code, il y a une boucle qui change l'état des stationnements aux secondes. Éventuellement, il faudra aller chercher cette valeur dans script.js.
