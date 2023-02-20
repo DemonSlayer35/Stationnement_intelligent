@@ -36,17 +36,27 @@ def positionnement():
     print(results)
     for i in liste:
         if i[5] == 2:
-            x1, y1, x2, y2 = [int(i) for i in i[:4]]
+            x1, y1, x2, y2 = [round(i) for i in i[:4]]
             coorLogo.append([(x1 + x2) / 2, (y1 + y2) / 2])
+
         elif i[5] == 0:
-            x1, y1, x2, y2 = [int(i) for i in i[:4]]
-            parkingLot.append([(x1 + x2) / 2, (y1 + y2) / 2])
+            x1, y1, x2, y2 = [round(i) for i in i[:4]]
+            parkingLot.append([round((x1 + x2) / 2),round((y1 + y2) / 2)])
     coorLogo = sorted(coorLogo, key=lambda coord: coord[1],reverse=True)
     print(coorLogo)
-
+    indexLogo = []
     for i in range(len(liste)):
-        liste[i] = liste[i][:-2]
-    
+        if liste[i][5] == 2.0:
+            indexLogo.append(i)
+        
+        #liste[i] = liste[i][:-2]
+        
+        for j in range(4):
+            liste[i][j] = round(liste[i][j])
+    indexLogo = sorted(indexLogo, reverse=True)
+    for x in indexLogo:
+        liste.pop(x)
+    liste = list(zip(liste,parkingLot))
     #parkingLot = list(zip(liste, parkingLot))
 
     angle = (math.degrees(math.atan2(coorLogo[0][0]-coorLogo[1][0],coorLogo[0][1]-coorLogo[1][1]))) 
@@ -55,26 +65,18 @@ def positionnement():
         x,y = coord[0]-coorLogo[1][0], coord[1] - coorLogo[1][1]
         print(((math.degrees(math.atan2(y, x))) + 360) % 360)
         return (((math.degrees(math.atan2(y, x))) + 360 - 90+ angle) % 360)
-    sortedLot = sorted(parkingLot,key=classement)
+    
+    sortedLot = sorted(liste,key=lambda x: classement(x[1]))
     print(parkingLot)
     print(sortedLot)
     print("fin du trie")
 
-
-    combined_list = list(zip(liste, parkingLot, sortedLot))
-    print(combined_list)
-    sorted_list = sorted(combined_list, key=lambda x: sortedLot.index(x[2]))
-    print(sorted_list)
-    sorted_coords_rectangles = [x[0] for x in sorted_list]
-    print(sorted_coords_rectangles)
-
-
-    
-
-
-
+    for i in range(len(sortedLot)):
+        values_x.append(sortedLot[i][0][:4:2])
+        values_y.append(sortedLot[i][0][1:4:2])
+    #breakpoint()
     for x in range(len(sortedLot)):
-        cv2.putText(frame,str(x),(int(sortedLot[x][0]),int(sortedLot[x][1])),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2,cv2.LINE_AA)
+        cv2.putText(frame,str(x),(int(sortedLot[x][1][0]),int(sortedLot[x][1][1])),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2,cv2.LINE_AA)
     cv2.imshow("Détection d'objets", frame)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
@@ -94,7 +96,13 @@ while cap.isOpened():
 
         results = model(frame)
         liste = results.xyxy[0].tolist()
-
+        indexLogo = []
+        for i in range(len(liste)):
+            if liste[i][5] == 2.0:
+                indexLogo.append(i)
+        indexLogo = sorted(indexLogo, reverse=True)
+        for x in indexLogo:
+            liste.pop(x)
         for i, x in enumerate(liste):
             x1, y1, x2, y2 = [int(x) for x in x[:4]]
             
