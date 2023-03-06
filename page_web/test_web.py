@@ -7,7 +7,9 @@ def publish_mqtt(topic, payload):
     client = mqtt.Client()
 
     # Connectez le client au broker MQTT
-    client.connect("localhost", 1883, 60)
+    client.connect("localhost", 1883, 60)#10.240.9.128  localhost   8080
+
+    places = [{"id": i+1, "etat": 'libre' if payload[i] < 1 else 'occupe'} for i in range(len(payload))]
 
     # Création d'un dictionnaire pour stocker les données
     data = {}
@@ -18,9 +20,7 @@ def publish_mqtt(topic, payload):
     # Ajout d'un tag pour le temps
     data['time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
 
-    # Ajout des tags pour chaque place de parking
-    for i in range(len(payload)):
-        data[f'place {i+1}'] = 'libre' if payload[i] < 1 else 'occupé'
+    data["places"] = places
 
     # Convertir le dictionnaire en JSON
     json_data = json.dumps(data)
@@ -41,20 +41,19 @@ places[0] = 0
 # Itération pour changer les valeurs de la liste
 i = 0
 while True:
-    # Affichage de la liste
-    #print(places)
-    
     if i == 17:
         places[0] = 0
         places[i] = 1
         i = 0
+        # Envoyer les données MQTT
+        publish_mqtt("parking/A", places)
         continue
     else:
         # Changement de la valeur d'un élément de la liste
         places[i + 1] = places[i]
         places[i] = 1
-    
-    # Envoyer les données MQTT
-    publish_mqtt("parking/A", places)
+        # Envoyer les données MQTT
+        publish_mqtt("parking/A", places)
+
 
     i += 1
