@@ -9,16 +9,12 @@ model.conf = 0.45  # Confiance minimale pour utilisation
 
 cap = cv2.VideoCapture(1)  # 0 = Webcam intégrée ; 1 = Camera USB
 
-#values_x = [[41, 205], [66, 202], [92, 205], [102, 212], [113, 218], [124, 221], [131, 227], [142, 233], [146, 234], [303, 393], [310, 397], [312, 406], [314, 414], [313, 425], [320, 431], [319, 444], [324, 463], [325, 487]]
-#values_y = [[377, 480], [313, 406], [254, 339], [212, 284], [166, 232], [127, 193], [95, 150], [66, 117], [38, 83], [29, 84], [62, 113], [88, 148], [121, 187], [166, 221], [201, 285], [256, 321], [298, 393], [367, 471]]
-
 values_x = []
 values_y = []
 parkingLot = []
 sortedLot = []
 
 moyenne = [0] * 18
-
 
 def positionnement():
     global parkingLot,values_x,values_y,sortedLot
@@ -49,15 +45,12 @@ def positionnement():
         if liste[i][5] == 2.0:
             indexLogo.append(i)
         
-        #liste[i] = liste[i][:-2]
-        
         for j in range(4):
             liste[i][j] = round(liste[i][j])
     indexLogo = sorted(indexLogo, reverse=True)
     for x in indexLogo:
         liste.pop(x)
     liste = list(zip(liste,parkingLot))
-    #parkingLot = list(zip(liste, parkingLot))
 
     angle = (math.degrees(math.atan2(coorLogo[0][0]-coorLogo[1][0],coorLogo[0][1]-coorLogo[1][1]))) 
     print("L'angle est de ",angle)
