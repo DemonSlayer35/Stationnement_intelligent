@@ -43,7 +43,6 @@ const topic = "parking/A";
 12. Télécharger Mosquitto à partir du site officiel : [https://nginx.org/en/download.html](https://mosquitto.org/download/).
 
 13. Ouvrir le fichier de configuration de NGINX nginx.conf et ajouter les lignes suivantes à la fin du fichier:
-![image](https://user-images.githubusercontent.com/89463240/223537293-a6bda1dd-a7c2-478f-a99b-b880ac6a1df0.png)
 ```
 listener 1883
 listener 8080 
@@ -51,6 +50,7 @@ protocol websockets
 allow_anonymous true
 socket_domain ipv4
 ```
+![image](https://user-images.githubusercontent.com/89463240/223537293-a6bda1dd-a7c2-478f-a99b-b880ac6a1df0.png)
 
 14. Démarrer le serveur Mosquitto avec la commande ```mosquitto -c mosquitto.conf``` dans une console cmd.
 
