@@ -1,13 +1,27 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      #canvas {
-        border: 1px solid black;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="canvas" width="1152" height="648"></canvas>
-    <script src="C:/nginx-1.23.3/js/script.js"></script>
-  </body>
+   <head>
+      <meta charset="UTF-8">
+      <style>
+         body {
+         background-color : lightblue;
+         }
+         #canvas {
+         background-image: url("https://i.imgur.com/eD1rE8T.jpeg");
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 80%;
+         height: auto;
+         padding: 25px;
+         border: 1px solid black;
+         }
+      </style>
+   </head>
+   <body>
+      <canvas id="canvas"></canvas>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js"></script>
+      <script src="/js/script.js"></script>
+   </body>
 </html>
