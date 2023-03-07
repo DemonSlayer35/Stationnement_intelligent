@@ -1,8 +1,9 @@
 # Procédure pour faire rouler la page Web contenant le schéma du stationnement accessible à tous
 
-1. Télécharger NGINX à partir du site officiel : https://nginx.org/en/download.html, puis décompresser le dossier.
+1. Installer paho-mqtt (client MQTT) avec ```pip install paho-mqtt``` dans une console cmd.
+Télécharger NGINX à partir du site officiel : https://nginx.org/en/download.html, puis décompresser le dossier.
 
-2. Récupérer les fichiers app.py, page_web.html, script.js et camera.py.
+2. Récupérer les fichiers page_web.html, script.js et camera.py.
 
 3. Créer un dossier js (pour les fichiers JavaScript) dans le répertoire de NGINX et y déposer script.js :
 
@@ -45,7 +46,8 @@ liste = JSON.parse(data);
   - Cela va créer une API web qui contient l'état des emplacements de stationnement dans une liste.
 
 13. Exécuter le fichier 📷camera.py avec ```py camera.py```.
-  - Cela va démarrer la détection des emplacements de stationnement. Après chaque cycle de 20 frames, la liste est mise à jour sur l'API web située
-  à localhost:5000/moyenne (Les autres usagers aussi peuvent accéder à la liste à [l'adresse IP de l'hôte]:5000/moyenne).
+  - Cela va démarrer la détection des emplacements de stationnement. Après chaque cycle de 20 frames, la liste est mise à jour sur le serveur Mosquitto
+  à [l'adresse IP de l'hôte]:1883
+  (Les autres usagers aussi peuvent accéder à la page qui va se mettre à jour avec les données à [l'adresse IP de l'hôte]:8080/).
 
 14. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
