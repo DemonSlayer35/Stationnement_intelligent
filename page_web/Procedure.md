@@ -42,7 +42,7 @@ const topic = "parking/A";
 
 12. Télécharger Mosquitto à partir du site officiel : [https://nginx.org/en/download.html](https://mosquitto.org/download/).
 
-13. Ouvrir le fichier de configuration de NGINX nginx.conf et ajouter les lignes suivantes à la fin du fichier:
+13. Ouvrir le fichier de configuration de Mosquitto (mosquitto.conf) et ajouter les lignes suivantes à la fin du fichier:
 ```
 listener 1883
 listener 8080 
