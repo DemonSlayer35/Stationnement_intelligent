@@ -40,9 +40,23 @@ const topic = "parking/A";
 
 ![image](https://user-images.githubusercontent.com/89463240/218911227-9a593f26-bed6-46c0-88f8-f0511b6e5e75.png)
 
-12. Exécuter le fichier 📷camera.py depuis une console cmd avec ```py camera.py```.
+12. Télécharger Mosquitto à partir du site officiel : [https://nginx.org/en/download.html](https://mosquitto.org/download/).
+
+13. Ouvrir le fichier de configuration de NGINX nginx.conf et ajouter les lignes suivantes à la fin du fichier:
+![image](https://user-images.githubusercontent.com/89463240/223537293-a6bda1dd-a7c2-478f-a99b-b880ac6a1df0.png)
+```
+listener 1883
+listener 8080 
+protocol websockets
+allow_anonymous true
+socket_domain ipv4
+```
+
+14. Démarrer le serveur Mosquitto avec la commande ```mosquitto -c mosquitto.conf``` dans une console cmd.
+
+15. Exécuter le fichier 📷camera.py depuis une console cmd avec ```py camera.py```.
   - Cela va démarrer la détection des emplacements de stationnement. Après chaque cycle de 20 frames, la liste est mise à jour sur le serveur Mosquitto
   à [l'adresse IP de l'hôte]:1883
   (Les autres usagers aussi peuvent accéder à la page qui va se mettre à jour avec les données à [l'adresse IP de l'hôte]:8080/).
 
-13. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
+16. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
