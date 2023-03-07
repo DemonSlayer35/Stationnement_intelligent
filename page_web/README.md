@@ -1,16 +1,16 @@
 ## app.py (Remplacé par MQTT)
 ~~* Le fichier app.py est un programme Python qui utilise le framework Flask pour créer une API web. 
-L'API permet au fichier camera.py de mettre à jour la liste moyenne de l'état des 18 stationnements.
+L'API permet au fichier camera.py de mettre à jour la liste moyenne de l'état des 18 stationnements.~~
 
-~~* Lorsqu'un utilisateur envoie une requête GET à la route "/moyenne", l'API renvoie la liste moyenne sous forme de JSON.
+~~* Lorsqu'un utilisateur envoie une requête GET à la route "/moyenne", l'API renvoie la liste moyenne sous forme de JSON.~~
 
 ~~* Lorsque camera.py envoie une requête POST à la route "/moyenne" avec une liste de 18 valeurs, 
-l'API met à jour la liste moyenne avec les nouvelles valeurs et renvoie la liste mise à jour sous forme de JSON.
+l'API met à jour la liste moyenne avec les nouvelles valeurs et renvoie la liste mise à jour sous forme de JSON.~~
 
 ~~* Le module flask_cors est également utilisé pour permettre l'accès à l'API depuis n'importe quel site web,
-en contournant les restrictions de sécurité normalement en place pour les requêtes effectuées à partir de sites tiers.
+en contournant les restrictions de sécurité normalement en place pour les requêtes effectuées à partir de sites tiers.~~
 
-~~* Il faut installer flask avec ```pip install flask``` et flask_cors avec ```pip install -U flask-cors```.
+~~* Il faut installer flask avec ```pip install flask``` et flask_cors avec ```pip install -U flask-cors```.~~
 
 ## page_web.html
 * Ce fichier HTML contient une page web qui affiche un canevas avec une texture d'asphalte. 
