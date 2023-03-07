@@ -40,12 +40,9 @@ const topic = "parking/A";
 
 ![image](https://user-images.githubusercontent.com/89463240/218911227-9a593f26-bed6-46c0-88f8-f0511b6e5e75.png)
 
-12. Exécuter le fichier 🍎app.py avec ```py app.py``` dans une console cmd par exemple (Il est préférable d'ouvrir tous les fichiers avec VS Code.)
-  - Cela va créer une API web qui contient l'état des emplacements de stationnement dans une liste.
-
-13. Exécuter le fichier 📷camera.py avec ```py camera.py```.
+12. Exécuter le fichier 📷camera.py depuis une console cmd avec ```py camera.py```.
   - Cela va démarrer la détection des emplacements de stationnement. Après chaque cycle de 20 frames, la liste est mise à jour sur le serveur Mosquitto
   à [l'adresse IP de l'hôte]:1883
   (Les autres usagers aussi peuvent accéder à la page qui va se mettre à jour avec les données à [l'adresse IP de l'hôte]:8080/).
 
-14. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
+13. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
