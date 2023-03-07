@@ -23,13 +23,11 @@ Télécharger NGINX à partir du site officiel : https://nginx.org/en/download.h
 
 7. Enregistrer le fichier et fermer nginx.conf (Notez qu'il faut repartir nginx.exe à chaque modification.)
 
-8. Modifier le fichier script.js en entrant l'adresse IP de l'hôte dans la fonction getListe() :
+8. Modifier le fichier script.js en entrant l'adresse IP de l'hôte pour la connexion MQTT et le bon nom de topic:
 ```
-// Fonction pour récupérer la liste depuis l'API REST
-async function getListe() {
-const response = await fetch('http://10.0.0.98:5000/moyenne'); //mettre l'adresse du serveur flask
-const data = await response.json();
-liste = JSON.parse(data);
+// Créez un nouveau client MQTT
+const client = new Paho.Client("10.240.9.128", 8080, "myclientid_");
+const topic = "parking/A";
 ```
      
 9. Enregistrer le fichier et repartir nginx.exe
