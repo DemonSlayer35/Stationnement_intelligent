@@ -1,0 +1,6 @@
+train: C:\yolov5\Stationnement_intelligent\data_parking/images\YOLODataset/images/train/
+val: C:\yolov5\Stationnement_intelligent\data_parking/images\YOLODataset/images/val/
+
+nc: 3
+
+names: ['logo', 'vide', 'car']

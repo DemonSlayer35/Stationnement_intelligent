@@ -3,9 +3,11 @@ import numpy as np
 import torch
 import time
 import math
+import paho.mqtt.client as mqtt # pip install paho-mqtt
+import json
 
 model = torch.hub.load('C:/yolov5', 'custom', path='C:/yolov5/Stationnement_intelligent/data_parking/bestv5m.pt', source='local')
-model.conf = 0.45  # Confiance minimale pour utilisation
+model.conf = 0.35  # Confiance minimale pour utilisation
 
 cap = cv2.VideoCapture(1)  # 0 = Webcam intégrée ; 1 = Camera USB
 
@@ -15,6 +17,39 @@ parkingLot = []
 sortedLot = []
 
 moyenne = [0] * 18
+
+def publish_mqtt(topic, payload):
+    # Créez un client MQTT
+    client = mqtt.Client()
+
+    # Connectez le client au broker MQTT
+    client.connect("10.240.9.128", 1883, 60)#10.240.9.128  localhost   8080
+
+    places = [{"id": i+1, "etat": 'libre' if payload[i] <= 0.5 else 'occupe'} for i in range(len(payload))]
+
+    # Création d'un dictionnaire pour stocker les données
+    data = {}
+
+    # Ajout des tags pour le parking A
+    data['parking'] = 'A'
+
+    # Ajout d'un tag pour le temps
+    data['time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+
+    data["places"] = places
+
+    # Convertir le dictionnaire en JSON
+    json_data = json.dumps(data)
+
+    # Publiez le payload sur le topic spécifié
+    client.publish(topic, json_data)
+
+    # Délai d'attente de 1 seconde
+    #time.sleep(1)
+
+    # Déconnectez le client MQTT
+    client.disconnect()
+
 
 def positionnement():
     global parkingLot,values_x,values_y,sortedLot
@@ -114,13 +149,15 @@ while cap.isOpened():
         cv2.rectangle(frame, (values_x[i][0], values_y[i][0]), (values_x[i][1], values_y[i][1]), color, 2)
         if moyenne[i] > 0.5:
             print("La voiture se trouve dans le parking", i+1)
-
+    publish_mqtt("parking/A", moyenne)
     print(moyenne)
-    cv2.imshow("Détection d'objets", frame)
+    for x in range(len(moyenne)):
+        moyenne[x] = 0
+    """cv2.imshow("Détection d'objets", frame)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     if cv2.waitKey(1) == 27:  # 27 est la valeur de la touche "Esc"
-        break
+        break """
 
 cap.release()
 cv2.destroyAllWindows()

@@ -145,11 +145,11 @@ def main():
 
         print(moyenne)
         publish_mqtt("parking/A", moyenne)
-        cv2.imshow("Détection d'objets", frame)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-        if cv2.waitKey(1) == 27:  # 27 est la valeur de la touche "Esc"
-            break
+        #cv2.imshow("Détection d'objets", frame)
+        #cv2.waitKey(0)
+        #cv2.destroyAllWindows()
+        #if cv2.waitKey(1) == 27:  # 27 est la valeur de la touche "Esc"
+        #    break
         
     cap.release()
     cv2.destroyAllWindows()
