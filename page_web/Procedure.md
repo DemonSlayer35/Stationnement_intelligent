@@ -1,8 +1,9 @@
 # Procédure pour faire rouler la page Web contenant le schéma du stationnement accessible à tous
 
-1. Télécharger NGINX à partir du site officiel : https://nginx.org/en/download.html, puis décompresser le dossier.
+1. Installer paho-mqtt (client MQTT) avec ```pip install paho-mqtt``` dans une console cmd.
+Télécharger NGINX à partir du site officiel : https://nginx.org/en/download.html, puis décompresser le dossier.
 
-2. Récupérer les fichiers app.py, page_web.html, script.js et camera.py.
+2. Récupérer les fichiers page_web.html, script.js et camera.py.
 
 3. Créer un dossier js (pour les fichiers JavaScript) dans le répertoire de NGINX et y déposer script.js :
 
@@ -22,13 +23,11 @@
 
 7. Enregistrer le fichier et fermer nginx.conf (Notez qu'il faut repartir nginx.exe à chaque modification.)
 
-8. Modifier le fichier script.js en entrant l'adresse IP de l'hôte dans la fonction getListe() :
+8. Modifier le fichier script.js en entrant l'adresse IP de l'hôte pour la connexion MQTT et le bon nom de topic:
 ```
-// Fonction pour récupérer la liste depuis l'API REST
-async function getListe() {
-const response = await fetch('http://10.0.0.98:5000/moyenne'); //mettre l'adresse du serveur flask
-const data = await response.json();
-liste = JSON.parse(data);
+// Créez un nouveau client MQTT
+const client = new Paho.Client("10.240.9.128", 8080, "myclientid_");
+const topic = "parking/A";
 ```
      
 9. Enregistrer le fichier et repartir nginx.exe
@@ -41,11 +40,23 @@ liste = JSON.parse(data);
 
 ![image](https://user-images.githubusercontent.com/89463240/218911227-9a593f26-bed6-46c0-88f8-f0511b6e5e75.png)
 
-12. Exécuter le fichier 🍎app.py avec ```py app.py``` dans une console cmd par exemple (Il est préférable d'ouvrir tous les fichiers avec VS Code.)
-  - Cela va créer une API web qui contient l'état des emplacements de stationnement dans une liste.
+12. Télécharger Mosquitto à partir du site officiel : [https://nginx.org/en/download.html](https://mosquitto.org/download/).
 
-13. Exécuter le fichier 📷camera.py avec ```py camera.py```.
-  - Cela va démarrer la détection des emplacements de stationnement. Après chaque cycle de 20 frames, la liste est mise à jour sur l'API web située
-  à localhost:5000/moyenne (Les autres usagers aussi peuvent accéder à la liste à [l'adresse IP de l'hôte]:5000/moyenne).
+13. Ouvrir le fichier de configuration de Mosquitto (mosquitto.conf) et ajouter les lignes suivantes à la fin du fichier:
+```
+listener 1883
+listener 8080 
+protocol websockets
+allow_anonymous true
+socket_domain ipv4
+```
+![image](https://user-images.githubusercontent.com/89463240/223537293-a6bda1dd-a7c2-478f-a99b-b880ac6a1df0.png)
 
-14. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
+14. Démarrer le serveur Mosquitto avec la commande ```mosquitto -c mosquitto.conf``` dans une console cmd.
+
+15. Exécuter le fichier 📷camera.py depuis une console cmd avec ```py camera.py```.
+  - Cela va démarrer la détection des emplacements de stationnement. Après chaque cycle de 20 frames, la liste est mise à jour sur le serveur Mosquitto
+  à [l'adresse IP de l'hôte]:1883
+  (Les autres usagers aussi peuvent accéder à la page qui va se mettre à jour avec les données à [l'adresse IP de l'hôte]:8080/).
+
+16. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
