@@ -8,7 +8,7 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 * Ce dossier contient les scripts en Python pour la détection des images avec la caméra et l'affichage du stationnement sur un écran.
 
 ## code_esp
-* Ce dossier contient le code (code_esp.ino) à téléverser dans l'ESP, ainsi que les fichiers (dans le dossier /data) à téléverser dans le fichier de système de l'ESP32. 
+* Ce dossier contient le code (code_esp.ino) à téléverser dans l'ESP, ainsi que les fichiers (dans le dossier /data) à téléverser dans le système de fichiers de l'ESP32. 
 * Le code de l'ESP génère un point d'accès qui sert la page Web du stationnement intelligent via un portail captif.
 
 ## data_parking 
