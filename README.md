@@ -1,7 +1,7 @@
 # Stationnement intelligent
 Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 
-## Kicad
+## KiCad
 * Ce dossier contient le projet KiCad (schéma électrique, PCB et fichiers de fabrication) de l'ESP32 pour la barrière de stationnement.
 
 ## code 
