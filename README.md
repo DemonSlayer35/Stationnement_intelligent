@@ -6,6 +6,7 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 
 ## code 
 * Ce dossier contient les scripts en Python pour la détection des images avec la caméra et l'affichage du stationnement sur un écran.
+* Le code envoie les résultats de la détection d'emplacements libres par MQTT au broker pour la construction de la page Web du stationnement.
 
 ## code_esp
 * Ce dossier contient le code (code_esp.ino) à téléverser dans l'ESP, ainsi que les fichiers (dans le dossier /data) à téléverser dans le système de fichiers de l'ESP32. 
