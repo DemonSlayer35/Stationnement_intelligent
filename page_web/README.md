@@ -31,7 +31,7 @@ pour récupérer une liste de disponibilité de ces parkings à partir d'un serv
 
 * Les parkings disponibles sont remplis de vert et les parkings occupés sont remplis de rouge. Les numéros de parking sont également affichés à l'intérieur des rectangles.
 
-* Toutes les 2 secondes, les données affichées sur le canvas HTML sont mises à jour.
+* Toutes les 2 secondes, les données affichées sur le canevas HTML sont mises à jour.
 
 ## test_web.py
 * Ce fichier est un script Python pour tester la publication de la liste en MQTT au lieu de Flask.
