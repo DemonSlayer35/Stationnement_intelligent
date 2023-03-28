@@ -19,7 +19,7 @@ Puis, cliquer sur le bouton “OK”:
  ![image](https://user-images.githubusercontent.com/89463240/228366484-715ab89d-7758-4ec4-a002-9ca02955c95c.png)
 
  
-##Installer ESP32 Filesystem Uploader dans l’IDE Arduino (https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/)
+## Installer ESP32 Filesystem Uploader dans l’IDE Arduino (https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/)
 
 1) Aller à l'adresse suivante https://github.com/me-no-dev/arduino-esp32fs-plugin/releases/ et télécharger le dossier compressé ESP32FS-1.0.zip
 
@@ -34,7 +34,7 @@ Par exemple, le chemin peut ressembler à cela: C:\Users\sarin\Documents\Arduino
 
  ![image](https://user-images.githubusercontent.com/89463240/228367262-c871d724-9a2f-4f6e-96ee-26b7b8632233.png)
  
-4) Décompresser le dossier .zip Ouvrez-le et copiez le dossier ESP32FS dans le dossier tools précédemment créé.
+4) Décompresser le dossier .zip. Ouvrez-le et copiez le dossier ESP32FS dans le dossier tools précédemment créé.
 La structure de fichier devrait ressembler à: <Dossier-des-croquis>/tools/ESP32FS/tool/esp32fs.jar
   
  ![image](https://user-images.githubusercontent.com/89463240/228367647-3e1a9e7e-64cd-46e6-afd6-314ddc10b835.png)
