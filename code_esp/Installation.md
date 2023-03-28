@@ -2,6 +2,7 @@
 1.	Dans l'IDE Arduino (pas 2.0), aller dans Fichier> Préférences
 
 ![image](https://user-images.githubusercontent.com/89463240/228365218-8526f81f-c23b-4dda-a570-b5eb5e57da7c.png)
+
  
 2.	Entrer l'adresse suivante dans le champ “URL de gestionnaire de cartes supplémentaires” :
 https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
