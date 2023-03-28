@@ -13,7 +13,8 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 * Le code de l'ESP génère un point d'accès qui sert la page Web du stationnement intelligent via un portail captif.
 
 ## data_parking 
-* Ce dossier contient les images de stationnement pour l'entraînement de l'IA et les étiquettes correspondantes.
+* Ce dossier contient les images de stationnement pour l'entraînement de l'IA et les étiquettes correspondantes (vide, plein, logo).
+* Sont aussi inclus les modèles résultants de l'entraînement qui permettent de détecter les étiquettes voulues.
 
 ## page_web
 * Ce dossier contient les fichiers de code pour la génération de la page Web affichant les places de stationnement.
