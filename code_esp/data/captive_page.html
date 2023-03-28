@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+	  <title>Parking</title>
+      <style>
+         body {
+         background-color : lightblue;
+         }
+         #canvas {
+         background-color:grey;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 80%;
+         height: auto;
+         padding: 25px;
+         border: 1px solid black;
+         }
+      </style>
+   </head>
+   <body>
+      <canvas id="canvas"></canvas>
+      <script> function changeColor(){document.body.style.backgroundColor = 'red';} </script>
+	  <script src="/script.js"></script>
+	  <button onclick="changeColor()">Change Background Color</button>
+   </body>
+</html>
