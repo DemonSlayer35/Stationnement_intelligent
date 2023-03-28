@@ -23,7 +23,7 @@ def publish_mqtt(topic, payload):
     client = mqtt.Client()
 
     # Connectez le client au broker MQTT
-    client.connect("10.240.9.128", 1883, 60)#10.240.9.128  localhost   8080
+    client.connect("192.168.0.101", 1883, 60)#10.240.9.128  localhost   8080
 
     places = [{"id": i+1, "etat": 'libre' if payload[i] <= 0.5 else 'occupe'} for i in range(len(payload))]
 
