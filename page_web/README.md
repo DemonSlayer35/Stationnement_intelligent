@@ -37,3 +37,6 @@ pour récupérer une liste de disponibilité de ces parkings à partir d'un serv
 * Ce fichier est un script Python pour tester la publication de la liste en MQTT au lieu de Flask.
 
 * Dans le code, il y a une boucle qui change l'état des stationnements aux secondes.
+
+## Procedure.md
+* Procédure pour faire rouler la page Web contenant le schéma du stationnement accessible à tous
