@@ -1,5 +1,8 @@
-## data
-* Dossier contenant les fichiers pour la page Web à téléverser dans le système de fichiers de l'ESP.
+## Installation.md 
+* Ce fichier contient les procédures d'installation du board ESP32 et des librairies pour le code dans l'IDE Arduino.
+
+## Procedure.md
+* Procédure pour faire rouler l'ESP en mode point d'accès avec un portail captif affichant le schéma du stationnement
 
 ## code_esp.ino
 * Code à téléverser dans l'ESP32 pour générer un point d'accès qui sert la page Web du stationnement intelligent via un portail captif.
@@ -12,5 +15,5 @@ Il faut donc que le broker soit connecté au même réseau.
 le contenu de la nouvelle liste.
 * Ainsi, lorsque le code javascript effectue (aux 2 secondes) une requête GET vers "/content", il reçoit une réponse contenant le contenu de la liste sous forme de JSON.
 
-## Installation.md 
-* Ce fichier contient les procédures d'installation du board ESP32 et des librairies pour le code dans l'IDE Arduino.
+## data
+* Dossier contenant les fichiers pour la page Web à téléverser dans le système de fichiers de l'ESP.
