@@ -1,6 +1,9 @@
 # Stationnement intelligent
 Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 
+## Installation.md 
+* Ce fichier contient les procédures d'installation de la suite Yolov5 et les étapes pour l'entraînement de l'IA ainsi que la détection d'objets.
+
 ## KiCad
 * Ce dossier contient le projet KiCad (schéma électrique, PCB et fichiers de fabrication) de l'ESP32 pour la barrière de stationnement.
 
@@ -18,6 +21,3 @@ Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 
 ## page_web
 * Ce dossier contient les fichiers de code pour la génération de la page Web affichant les places de stationnement.
-
-## Installation.md 
-* Ce fichier contient les procédures d'installation de la suite Yolov5 et les étapes pour l'entraînement de l'IA ainsi que la détection d'objets.
