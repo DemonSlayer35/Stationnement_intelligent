@@ -1,6 +1,15 @@
 # Stationnement intelligent
 Projet de fin de DEC en TSO (Etienne Dubé et Mohammad Barin Wahidi)
 
+## Pour démarrer le projet, il faut d'abord suivre les étapes d'installation des fichiers Installation.md 
+(Stationnement_intelligent/Installation.md et Stationnement_intelligent/code_esp/Installation.md)
+https://github.com/DemonSlayer35/Stationnement_intelligent/blob/main/Installation.md et
+https://github.com/DemonSlayer35/Stationnement_intelligent/blob/main/code_esp/Installation.md
+
+Ensuite, il faut suivre les étapes d'opération des fichiers Procedure.md
+(Stationnement_intelligent/page_web/Procedure.md et Stationnement_intelligent/code_esp/Procedure.md)
+https://github.com/DemonSlayer35/Stationnement_intelligent/blob/main/page_web/Procedure.md et https://github.com/DemonSlayer35/Stationnement_intelligent/blob/main/code_esp/Procedure.md
+
 ## Installation.md 
 * Ce fichier contient les procédures d'installation de la suite Yolov5 et les étapes pour l'entraînement de l'IA ainsi que la détection d'objets.
 
