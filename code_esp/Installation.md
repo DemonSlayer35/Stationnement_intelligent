@@ -26,7 +26,7 @@ Puis, cliquer sur le bouton “OK”:
  ![image](https://user-images.githubusercontent.com/89463240/228367129-3a848fa5-9a1c-4664-ad9b-d5b9c5790841.png)
  
 2) Trouver le dossier des croquis. Dans l'IDE Arduino, aller dans Fichier > Préférences et afficher le dossier des croquis.
-Par exemple, le chemin peut ressembler à cela: C:\Users\sarin\Documents\Arduino.
+Par exemple, le chemin peut ressembler à cela: C:\Users\user\Documents\Arduino.
 
  ![image](https://user-images.githubusercontent.com/89463240/228367172-ee0d1585-5164-49ee-b805-59dfabe1f69e.png)
  
@@ -48,3 +48,28 @@ Pour le MQTT, il faut installer la libraire PubSubClient via Outils > Gérer les
 
  ![image](https://user-images.githubusercontent.com/89463240/228368532-a11e78ec-05fb-4dc7-8f83-ec50c57eb2cf.png)
   
+## Installer la librairie ESPAsyncWebServer
+ 
+1) Cliquer sur ce lien https://github.com/me-no-dev/ESPAsyncWebServer/archive/master.zip pour télécharger la librairie.
+ 
+2) Décompresser le dossier .zip. Vous devriez obtenir un dossier ESPAsyncWebServer-master.
+ 
+3) Renommer le dossier ESPAsyncWebServer-master en ESPAsyncWebServer.
+ 
+4) Déplacer le dossier ESPAsyncWebServer vers votre dossier de libraires pour l'IDE Arduino.
+Par exemple, le chemin peut ressembler à cela: C:\Users\user\Documents\Arduino\libraries.
+ 
+![image](https://user-images.githubusercontent.com/89463240/229601575-35975a78-fbc0-4346-9110-a2d85399cbdd.png)
+ 
+## Installer la librairie Async TCP
+ 
+1) Cliquer sur ce lien https://github.com/me-no-dev/AsyncTCP/archive/master.zip pour télécharger la librairie.
+ 
+2) Décompresser le dossier .zip. Vous devriez obtenir un dossier AsyncTCP-master.
+ 
+3) Renommer le dossier AsyncTCP-master en AsyncTCP.
+ 
+4) Déplacer le dossier AsyncTCP vers votre dossier de libraires pour l'IDE Arduino.
+Par exemple, le chemin peut ressembler à cela: C:\Users\user\Documents\Arduino\libraries.
+ 
+![image](https://user-images.githubusercontent.com/89463240/229600926-301b9736-afe6-4281-a08d-d4d12bfa896c.png)
