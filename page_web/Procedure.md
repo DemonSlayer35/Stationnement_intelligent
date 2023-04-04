@@ -60,3 +60,5 @@ socket_domain ipv4
   (Les autres usagers aussi peuvent accéder à la page qui va se mettre à jour avec les données à [l'adresse IP de l'hôte]:8080/).
 
 16. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
+
+![image](https://user-images.githubusercontent.com/89463240/229799847-bbabdcea-edff-41ef-8f00-d739b08939c4.png)
