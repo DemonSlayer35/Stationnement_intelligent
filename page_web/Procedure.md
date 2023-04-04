@@ -53,6 +53,8 @@ socket_domain ipv4
 ![image](https://user-images.githubusercontent.com/89463240/223537293-a6bda1dd-a7c2-478f-a99b-b880ac6a1df0.png)
 
 14. Démarrer le serveur Mosquitto avec la commande ```mosquitto -c mosquitto.conf``` dans une console cmd.
+(Si la console affiche que le serveur est déjà occupé, vous pouvez tuer le service Mosquitto à partir des Services Windows ou avec
+la commande ```taskkill /im mosquitto.exe /f``` dans une console cmd exécutée en tant qu'administrateur.
 
 15. Exécuter le fichier 📷camera.py depuis une console cmd avec ```py camera.py```.
   - Cela va démarrer la détection des emplacements de stationnement. Après chaque cycle de 20 frames, la liste est mise à jour sur le serveur Mosquitto
