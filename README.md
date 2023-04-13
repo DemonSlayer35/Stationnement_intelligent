@@ -30,3 +30,6 @@ https://github.com/DemonSlayer35/Stationnement_intelligent/blob/main/page_web/Pr
 
 ## page_web
 * Ce dossier contient les fichiers de code pour la génération de la page Web affichant les places de stationnement.
+
+## schema.drawio
+* Ce fichier est un schéma bloc du fonctionnement du projet de stationnement intelligent (à ouvrir avec draw.io)
