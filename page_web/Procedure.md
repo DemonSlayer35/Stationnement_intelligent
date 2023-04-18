@@ -63,8 +63,9 @@ la commande ```taskkill /im mosquitto.exe /f``` dans une console cmd exécutée 
 16. Exécuter le fichier 📷camera.py depuis une console cmd avec ```py camera.py```.
   - Cela va démarrer la détection des emplacements de stationnement. Après chaque cycle de 20 frames, la liste est mise à jour sur le serveur Mosquitto
   à [l'adresse IP de l'hôte]:1883
-  (Les autres usagers aussi peuvent accéder à la page qui va se mettre à jour avec les données à [l'adresse IP de l'hôte]:8080/).
+  (La page va se mettre à jour avec les données MQTT envoyées au port 8080).
 
 17. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
+(Les autres usagers aussi peuvent accéder à la page.)
 
 ![image](https://user-images.githubusercontent.com/89463240/229799847-bbabdcea-edff-41ef-8f00-d739b08939c4.png)
