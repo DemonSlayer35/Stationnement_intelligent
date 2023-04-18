@@ -43,7 +43,7 @@ const topic = "parking/A";
 
 ![image](https://user-images.githubusercontent.com/89463240/218911227-9a593f26-bed6-46c0-88f8-f0511b6e5e75.png)
 
-13. Télécharger Mosquitto à partir du site officiel : [https://nginx.org/en/download.html](https://mosquitto.org/download/).
+13. Télécharger Mosquitto à partir du site officiel : https://mosquitto.org/download/.
 
 14. Ouvrir le fichier de configuration de Mosquitto (C:\Program Files\mosquitto\mosquitto.conf) 
 et ajouter les lignes suivantes à la fin du fichier:
