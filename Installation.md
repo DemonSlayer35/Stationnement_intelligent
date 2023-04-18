@@ -1,6 +1,6 @@
 # Étapes d'installation de YOLOv5 sur Windows avec une carte graphique NVIDIA
 1. Télécharger le fichier zip du répertoire de YOLOv5 à l'adresse https://github.com/ultralytics/yolov5
-   ou cloner le répertoire GitHub de YOLOv5 depuis une invite de commandes avec la commande (si vous avez Git installé sur votre PC) :
+   ou cloner le répertoire GitHub (si vous avez Git installé sur votre PC) de YOLOv5 depuis une invite de commandes avec la commande :
    
     git clone https://github.com/ultralytics/yolov5
 
