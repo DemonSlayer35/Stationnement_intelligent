@@ -66,6 +66,6 @@ la commande ```taskkill /im mosquitto.exe /f``` dans une console cmd exécutée 
   (La page va se mettre à jour avec les données MQTT envoyées au port 8080).
 
 17. Accéder au 🕸️site Web à [l'adresse IP de l'hôte]/page_web.html
-(Les autres usagers aussi peuvent accéder à la page.)
+(Les autres usagers peuvent aussi accéder à la page.)
 
 ![image](https://user-images.githubusercontent.com/89463240/229799847-bbabdcea-edff-41ef-8f00-d739b08939c4.png)
