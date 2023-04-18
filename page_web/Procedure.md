@@ -15,7 +15,7 @@ Télécharger NGINX à partir du site officiel : https://nginx.org/en/download.h
 
 ![image](https://user-images.githubusercontent.com/89463240/218909025-491fdb17-2edd-4e4a-b218-e89fd8c54dd2.png)
 
-6. Dans la section non-commentée qui commence par server{listen 80;, ajouter un bloc pour l'emplacement du dossier JavaScript comme suit :
+6. Dans la section non-commentée commençant par server{listen 80;, ajouter un bloc pour l'emplacement du dossier JavaScript comme suit :
 
 ![image](https://user-images.githubusercontent.com/89463240/218909527-c1ef1d6e-9860-4eb6-ac28-eef17fd967b4.png)
 
