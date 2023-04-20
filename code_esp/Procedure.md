@@ -2,7 +2,7 @@
 
 1. Récupérer le dossier code_esp.
 2. Ouvrir le fichier code_esp.ino dans l'IDE Arduino.
-3. Connecter l'ESP à l'ordinateur. Sélectionnner le type de carte (ex. : ESP32-WROOM-DA Module) et le port correspondant.
+3. Connecter l'ESP à l'ordinateur. Sélectionner le type de carte (ex. : ESP32-WROOM-DA Module) et le port correspondant.
 Assurez-vous aussi de rentrer les identifiants Wi-Fi correspondants ainsi que l'adresse du broker MQTT.
 
 ![image](https://user-images.githubusercontent.com/89463240/229603978-58d71221-2377-4d19-8865-b5e488f622d7.png)
