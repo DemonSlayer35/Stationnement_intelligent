@@ -14,6 +14,6 @@ Assurez-vous aussi de rentrer les identifiants Wi-Fi correspondants ainsi que l'
 ![image](https://user-images.githubusercontent.com/89463240/229604207-ad05dd2a-a6f8-4e10-89b3-223e964e955d.png)
 
 6. Un point d'accès nommé Parking devrait apparaître dans la liste des réseaux disponibles. En vous y connectant, le schéma
-du stationnment devrait apparaître après quelques secondes.
+du stationnement devrait apparaître après quelques secondes.
 
 (Vous pouvez vérifier dans le moniteur série de l'IDE Arduino si tout est fonctionnel.)
