@@ -99,7 +99,7 @@
 ```python detect.py --weights runs/train/exp/weights/best.pt --img 320 --conf 0.25 --source data_vache/images/```
 
 (Dans weigths, spécifier le chemin du modèle entraîné.
-Dans conf, spécifier le niveau de confiance entre 0 et 1 de l'intelligence pour la détection)
+Dans conf, spécifier le seuil de confiance entre 0 et 1 de l'intelligence pour la détection)
 
 2. Dans la console sera affichée le dossier des résultats. En général, c'est quelque chose du genre
    yolov5/runs/detect/exp
