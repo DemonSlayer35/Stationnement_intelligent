@@ -75,7 +75,7 @@
 
 (Dans cette image, le dossier du dataset est nommé data_vache et il est situé dans le répertoire yolov5 sur le PC.)
 
-4. Vous pouvez modifier les hyperparamètres à partir du fichier hyp.scatch.yaml (Ce sont des paramètres qui permettent
+4. Vous pouvez modifier les hyperparamètres à partir du fichier hyp.scratch.yaml (Ce sont des paramètres qui permettent
    d'améliorer l'entraînement comme la rotation ou la translation des images.)
 
 5. Ouvrir cmd à partir du dossier yolov5 et entraîner l'intelligence en tapant la commande :
