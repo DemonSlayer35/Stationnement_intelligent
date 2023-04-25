@@ -80,7 +80,7 @@
 
 5. Ouvrir cmd à partir du dossier yolov5 et entraîner l'intelligence en tapant la commande :
 
-```python train.py --img 320 --batch 16 --epochs 50 --data dataset_vache.yml --weights yolov5s.pt  --workers 4 --hyp data_vache\hyps\hyp.scratch.yaml```
+```python train.py --img 320 --batch 16 --epochs 50 --data dataset_vache.yml --weights yolov5s.pt --workers 4 --hyp data_vache\hyps\hyp.scratch.yaml```
 
 * img définit la résolution des images 
 * batch définit le nombre d'images par section d'entraînement
