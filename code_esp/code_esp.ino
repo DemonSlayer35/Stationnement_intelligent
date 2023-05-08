@@ -10,7 +10,7 @@ const char* ssid     = "tge_sansfil_283";       /*Remplacer par le SSID de votre
 const char* password = "sherbrooke"; /*Remplacer par le mot de passe de votre réseau*/
 
 // MQTT Broker
-const char *mqtt_broker = "192.168.0.101"; /*Remplacer par l'adresse IP du broker MQTT*/
+const char *mqtt_broker = "10.240.9.128"; /*Remplacer par l'adresse IP du broker MQTT*/
 const char *topic = "parking/A";           /*Remplacer par le topic MQTT*/
 const int mqtt_port = 1883;
 
@@ -28,6 +28,7 @@ int c_open = 0;
 int c_close = 0;
 int c_avant = 0;
 int c_apres = 0;
+int count = 0;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -151,7 +152,7 @@ void setup(){
   Serial.println(WiFi.localIP()); // Affiche l'adresse IP de l'ESP
 
   // Configuration de la connexion au broker MQTT
-  /*
+  
   client.setServer(mqtt_broker, mqtt_port);
   client.setCallback(callback);
   while (!client.connected()) {
@@ -171,7 +172,7 @@ void setup(){
           Serial.print(client.state());
           delay(2000);
       }
-  }*/
+  }
 
 
   //***************Code pour la barrière*******************//
@@ -207,7 +208,7 @@ void callback(char *topic, byte *payload, unsigned int length) {
   Serial.println("-----------------------");
 
   // On compte le nombre de fois que le mot "libre" apparaît dans le message reçu
-  int count = 0;
+  count = 0;
   int pos = liste.indexOf("libre");
   while (pos >= 0) {
     count++;
@@ -246,8 +247,8 @@ void ouvrir()
     digitalWrite(OUVERTURE,LOW);
 }
 void loop(){
-  //dnsServer.processNextRequest(); // On gère les requêtes DNS
-  //client.loop(); // On maintient la connexion MQTT active
+  dnsServer.processNextRequest(); // On gère les requêtes DNS
+  client.loop(); // On maintient la connexion MQTT active
 
   //***************Code pour la barrière*******************//
   c_open = digitalRead(GATE_OPEN);
@@ -255,7 +256,7 @@ void loop(){
   c_avant = digitalRead(AVANT);
   c_apres = digitalRead(APRES);
   //Serial.printf("Close : %d  Open : %d  apres :%d  avant : %d\n\r",c_close,c_open,c_apres,c_avant);
-  if((c_close == 0 && c_open == 1 && c_avant == 0)|(c_close == 0 && c_open == 1 && digitalRead(21) == 0) )// Si la barriere est fermée
+  if((c_close == 0 && c_open == 1 && c_avant == 0)&&(count != 0)|(c_close == 0 && c_open == 1 && digitalRead(21) == 0) )// Si la barriere est fermée
   {
     ouvrir();
   }
