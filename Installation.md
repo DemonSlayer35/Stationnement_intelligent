@@ -74,12 +74,13 @@
 ![image](https://user-images.githubusercontent.com/89463240/217090070-ecd2543e-f5da-4cbd-bb6c-4416c26e8cac.png)
 
 (Dans cette image, le dossier du dataset est nommé data_vache et il est situé dans le répertoire yolov5 sur le PC.)
-4. Vous pouvez modifier les hyperparamètres à partir du fichier hyp.scatch.yaml (Ce sont des paramètres qui permettent
+
+4. Vous pouvez modifier les hyperparamètres à partir du fichier hyp.scratch.yaml (Ce sont des paramètres qui permettent
    d'améliorer l'entraînement comme la rotation ou la translation des images.)
 
 5. Ouvrir cmd à partir du dossier yolov5 et entraîner l'intelligence en tapant la commande :
 
-```python train.py --img 320 --batch 16 --epochs 50 --data dataset_vache.yml --weights yolov5s.pt  --workers 4 --hyp data_vache\hyps\hyp.scratch.yaml```
+```python train.py --img 320 --batch 16 --epochs 50 --data dataset_vache.yml --weights yolov5s.pt --workers 4 --hyp data_vache\hyps\hyp.scratch.yaml```
 
 * img définit la résolution des images 
 * batch définit le nombre d'images par section d'entraînement
@@ -98,7 +99,7 @@
 ```python detect.py --weights runs/train/exp/weights/best.pt --img 320 --conf 0.25 --source data_vache/images/```
 
 (Dans weigths, spécifier le chemin du modèle entraîné.
-Dans conf, spécifier le niveau de confiance entre 0 et 1 de l'intelligence pour la détection)
+Dans conf, spécifier le seuil de confiance entre 0 et 1 de l'intelligence pour la détection)
 
 2. Dans la console sera affichée le dossier des résultats. En général, c'est quelque chose du genre
    yolov5/runs/detect/exp
