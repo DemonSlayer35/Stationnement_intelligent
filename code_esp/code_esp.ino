@@ -1,3 +1,16 @@
+/*
+  Projet de gestion de parking avec ESP32 et MQTT
+  Auteur : Etienne Dubé, Mohammad Barin Wahidi
+  Date : 24 avril 2023
+
+  Description :
+  Ce code permet de gérer un parking en utilisant un ESP32 pour contrôler l'accès,
+  afficher les informations sur un serveur web et communiquer avec un broker MQTT.
+  Le système contrôle l'ouverture et la fermeture de la barrière en fonction du nombre
+  de places disponibles. Les informations sur les places sont récupérées via MQTT
+  et affichées sur une page web hébergée sur l'ESP32.
+*/
+
 #include <DNSServer.h>
 #include <WiFi.h>
 #include <AsyncTCP.h>
@@ -176,7 +189,6 @@ void setup(){
 
 
   //***************Code pour la barrière*******************//
-
   pinMode(4,OUTPUT);
   pinMode(15,OUTPUT);
   pinMode(21, INPUT);
@@ -251,19 +263,25 @@ void loop(){
   client.loop(); // On maintient la connexion MQTT active
 
   //***************Code pour la barrière*******************//
+  //Lecture des capteurs
   c_open = digitalRead(GATE_OPEN);
   c_close = digitalRead(GATE_CLOSE);
   c_avant = digitalRead(AVANT);
   c_apres = digitalRead(APRES);
   //Serial.printf("Close : %d  Open : %d  apres :%d  avant : %d\n\r",c_close,c_open,c_apres,c_avant);
+<<<<<<< HEAD
+  if((c_close == 0 && c_open == 1 && c_avant == 0)&&(count != 0)|(c_close == 0 && c_open == 1 && digitalRead(21) == 0) )// Si la barriere est fermée elle ouvre si les conditions sont remplies
+=======
   if(((c_close == 0 && c_open == 1 && c_avant == 0)&&(count != 0))|(c_close == 0 && c_open == 1 && digitalRead(21) == 0) )// Si la barriere est fermée
+>>>>>>> bfbf01fcaa84f13067916f874213f1b680a27161
   {
     ouvrir();
   }
-  if((c_close == 1 && c_open == 0 && c_apres == 0)|(c_close == 1 && c_open == 0 && digitalRead(21) == 0))// Si la barriere est ouverte
+  if((c_close == 1 && c_open == 0 && c_apres == 0)|(c_close == 1 && c_open == 0 && digitalRead(21) == 0))// Si la barriere est ouverte elle ferme si les conditions sont remplies
   {
     fermer();
   }
+  // Gestion de l'état de la lumière selon la position de la barrière
   if (c_open == 0)
   {
     digitalWrite(RED_LIGHT,LOW);
