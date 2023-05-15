@@ -256,7 +256,7 @@ void loop(){
   c_avant = digitalRead(AVANT);
   c_apres = digitalRead(APRES);
   //Serial.printf("Close : %d  Open : %d  apres :%d  avant : %d\n\r",c_close,c_open,c_apres,c_avant);
-  if((c_close == 0 && c_open == 1 && c_avant == 0)&&(count != 0)|(c_close == 0 && c_open == 1 && digitalRead(21) == 0) )// Si la barriere est fermée
+  if(((c_close == 0 && c_open == 1 && c_avant == 0)&&(count != 0))|(c_close == 0 && c_open == 1 && digitalRead(21) == 0) )// Si la barriere est fermée
   {
     ouvrir();
   }
